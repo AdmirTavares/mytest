@@ -1,0 +1,47 @@
+{
+    "questions": [
+        {
+            "number": 1,
+            "question": "Qual autoridade de decisão seus representantes de confiança devem ter?",
+            "multiple_choice": false,
+             "inserir": false,
+            "options": [
+                "Decidir apenas em conjunto.",
+                "Cada um decide separadamente.",
+                "Cada um decide separadamente, mas em caso de desacordo, a pessoa mencionada em primeiro lugar decide."
+            ]
+        },
+        
+        {
+            "number": 2,
+            "question": "Hier die Daten des/der Bevollmächtigten",
+            "multiple_choice": true,
+            "options": [
+                "VORNAME NACHNAME",
+                "geboren am GEBURTSDATUM in GEBURTSORT",
+                "wohnhaft in STRASSE + HAUSNUMMER, POSTLEITZAHL, ORT"
+            ]
+        },
+        {
+            "number": 3,
+            "question": "Qual autoridade representantes de confiança devem ter?",
+            "multiple_choice": false,
+             "inserir": false,
+            "options": [
+                "Decidir apenas em .",
+                "Cada um decide .",
+                "Cada um decide separadamente, mas em caso de desacordo,."
+            ]  
+        },
+        {
+            "number": 4,
+            "question": "Hier die Daten des",
+            "multiple_choice": true,
+            "options": [
+                "VORNAME ",
+                "geboren ",
+                "wohnha"
+            ]
+        }
+    ]
+}
