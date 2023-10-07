@@ -11,9 +11,8 @@ class Quiz extends Component
     public $questions = [];
     public $selectedResponse = null;
     public $selectedOptions = [];
-    public $selectedCard = [];
     public $TextFildeVisibilite = false;
-    public $smartWizardCheck="smartWizardCheck";
+    public $textfield='';
 
     public function RadioSave($number, $question, $option)
     {
@@ -38,7 +37,36 @@ class Quiz extends Component
     }
 
 
+public function verificar(){
 
+  
+foreach ($this->selectedOptions as $questionNumber => $questionData) {
+    foreach ($questionData as $question => $options) {
+        foreach ($options as $option => $value) {
+            if ($value === true) {
+                $registroExistente = Save::where([
+                    'number' => $questionNumber,
+                    'question' => $question,
+                    'answer' => $option,
+                ])->first();
+                if (!$registroExistente) {
+                Save::create([
+                    'number' => $questionNumber,
+                    'question' => $question,
+                    'answer' => $option,
+                ]);
+            } 
+        $this->reset();
+        }
+            else{
+                Save::where('number', $questionNumber)->delete();
+                $this->reset();
+            }
+        }
+    }
+}
+dd($this->selectedOptions);
+}
 
 
 
@@ -76,7 +104,6 @@ class Quiz extends Component
 
     public function render()
     {
-        $this->smartWizardCheck="smartWizardCheck";
         $questions =  $this->loadQuestionsFromJson();
         return view('livewire.quiz', compact('questions'));
     }
