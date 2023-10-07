@@ -5,37 +5,36 @@ namespace App\Livewire;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
 use App\Models\Save;
+
 class Quiz extends Component
 {
     public $questions = [];
     public $selectedResponse = null;
     public $selectedOptions = [];
     public $selectedCard = [];
+    public $TextFildeVisibilite = false;
 
-
-
-
-public function RadioSave($number, $question, $option){
-    
- $aux=Save::where('number',$number)->get();
-    
-    if($aux->isEmpty()|| $aux==NULL){
-        Save::create([
-            'number' => $number,
-            'question' => $question,
-            'answer' => $option,
-        ]);
-}
-
-    else
+    public function RadioSave($number, $question, $option)
     {
-        Save::where('number', $number)->update([
-            'answer' => $option,
-        ]);
-}
-}
+        $aux = Save::where('number', $number)->get();
+        if ($aux->isEmpty() || $aux == NULL) {
+            Save::create([
+                'number' => $number,
+                'question' => $question,
+                'answer' => $option,
+            ]);
+        } else {
+            Save::where('number', $number)->update([
+                'answer' => $option,
+            ]);
+        }
+    }
 
-
+    public function answerTextfield()
+    {
+        
+        $this->TextFildeVisibilite=true;
+    }
 
 
 
@@ -51,7 +50,7 @@ public function RadioSave($number, $question, $option){
         } else {
             $this->selectedOptions[$questionNumber]['selected'] = false;
         }
-    
+
         // Verifique se pelo menos uma opção foi selecionada em todas as perguntas.
         foreach ($this->questionData as $question) {
             if (!isset($this->selectedOptions[$question['number']]['selected']) || !$this->selectedOptions[$question['number']]['selected']) {
@@ -60,7 +59,7 @@ public function RadioSave($number, $question, $option){
             }
         }
     }
-    
+
     protected function loadQuestionsFromJson()
     {
         $jsonPath = resource_path('json/quiz.json');
@@ -68,7 +67,7 @@ public function RadioSave($number, $question, $option){
             $jsonContent = file_get_contents($jsonPath);
             $data = json_decode($jsonContent, true);
             if (isset($data['questions'])) {
-                $this->questions = $data['questions'];   
+                $this->questions = $data['questions'];
             }
         }
     }
@@ -76,9 +75,7 @@ public function RadioSave($number, $question, $option){
 
     public function render()
     {
-        $questions=  $this->loadQuestionsFromJson();
+        $questions =  $this->loadQuestionsFromJson();
         return view('livewire.quiz', compact('questions'));
     }
-
-   
 }

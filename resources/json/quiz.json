@@ -4,7 +4,9 @@
             "number": 1,
             "question": "Qual autoridade de decisão seus representantes de confiança devem ter?",
             "multiple_choice": false,
+            "Oneselection":true,
              "inserir": false,
+             "textfield": false,
             "options": [
                 "Decidir apenas em conjunto.",
                 "Cada um decide separadamente.",
@@ -14,8 +16,12 @@
         
         {
             "number": 2,
-            "question": "Hier die Daten des/der Bevollmächtigten",
+            
+            "question": "Hier die Dat",
+            "Oneselection":false,
             "multiple_choice": true,
+            "inserir": false,
+            "textfield": false,
             "options": [
                 "VORNAME NACHNAME",
                 "geboren am GEBURTSDATUM in GEBURTSORT",
@@ -24,8 +30,10 @@
         },
         {
             "number": 3,
-            "question": "Qual autoridade representantes de confiança devem ter?",
+            "question": "Qual autorid",
+            "Oneselection":true,
             "multiple_choice": false,
+            "textfield": false,
              "inserir": false,
             "options": [
                 "Decidir apenas em .",
@@ -35,13 +43,31 @@
         },
         {
             "number": 4,
-            "question": "Hier die Daten des",
-            "multiple_choice": true,
+            "question": "Hier die Dat",
+            "Oneselection":false,
+            "multiple_choice": false,
+            "textfield": true,
+             "inserir": false,
             "options": [
                 "VORNAME ",
                 "geboren ",
                 "wohnha"
-            ]
+            ],
+            "answerTextfield":"oiiiiiiii"
+        },
+        {
+            "number": 5,
+            "question": "Hier die Dat",
+            "Oneselection":false,
+            "multiple_choice": false,
+            "textfield": true,
+             "inserir": false,
+            "options": [
+                "mofofoakoasoasd ",
+                "lslalls",
+                "wwwlwllwlwlwlwlwl"
+            ],
+            "answerTextfield":"oiiiiiiii"
         }
     ]
 }

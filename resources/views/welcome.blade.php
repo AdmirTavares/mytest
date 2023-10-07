@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="css/vendor/smart_wizard.min.css" />
     <link rel="stylesheet" href="css/vendor/bootstrap-tagsinput.css" />
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/main.css" />
+    
 </head>
 
 <body id="app-container" class="menu-default show-spinner">
