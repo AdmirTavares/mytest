@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('placebirth');
             $table->string('zipcode');
             $table->string('city');
+            $table->foreingId('user_id')->constrained();
         });
     }
 

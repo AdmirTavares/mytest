@@ -12,16 +12,21 @@ class Quiz extends Component
     public $selectedResponse = null;
     public $selectedOptions = [];
     public $TextFildeVisibilite = false;
-    public $textfield='';
+    public $textfield = '';
 
+    public function create($number){
+    
+    }
     public function RadioSave($number, $question, $option)
     {
+
         $aux = Save::where('number', $number)->get();
         if ($aux->isEmpty() || $aux == NULL) {
             Save::create([
                 'number' => $number,
                 'question' => $question,
                 'answer' => $option,
+                'user_id' => auth()->user()->id,
             ]);
         } else {
             Save::where('number', $number)->update([
@@ -29,45 +34,41 @@ class Quiz extends Component
             ]);
         }
     }
-
-    public function answerTextfield()
+    public function textfieldsave()
     {
-        
-        $this->TextFildeVisibilite=true;
     }
 
 
-public function verificar(){
-
-  
-foreach ($this->selectedOptions as $questionNumber => $questionData) {
-    foreach ($questionData as $question => $options) {
-        foreach ($options as $option => $value) {
-            if ($value === true) {
-                $registroExistente = Save::where([
-                    'number' => $questionNumber,
-                    'question' => $question,
-                    'answer' => $option,
-                ])->first();
-                if (!$registroExistente) {
-                Save::create([
-                    'number' => $questionNumber,
-                    'question' => $question,
-                    'answer' => $option,
-                ]);
-            } 
-        $this->reset();
-        }
-            else{
-                Save::where('number', $questionNumber)->delete();
-                $this->reset();
+    public function verificar()
+    {
+        foreach ($this->selectedOptions as $questionNumber => $questionData) {
+            foreach ($questionData as $question => $options) {
+                foreach ($options as $option => $value) {
+                    if ($value === true) {
+                        $registroExistente = Save::where([
+                            'number' => $questionNumber,
+                            'question' => $question,
+                            'answer' => $option,
+                            'user_id' => auth()->user()->id,
+                        ])->first();
+                        if (!$registroExistente) {
+                            Save::create([
+                                'number' => $questionNumber,
+                                'question' => $question,
+                                'answer' => $option,
+                                'user_id' => auth()->user()->id,
+                            ]);
+                        }
+                        $this->reset();
+                    } else {
+                        Save::where('number', $questionNumber)->delete();
+                        $this->reset();
+                    }
+                }
             }
         }
+        dd($this->selectedOptions);
     }
-}
-dd($this->selectedOptions);
-}
-
 
 
 

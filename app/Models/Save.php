@@ -13,5 +13,9 @@ class Save extends Model
         'question',
         'number'
 ];
+
+public function user(){
+    return  $this->belongsTo(User::class);
+}
     use HasFactory;
 }

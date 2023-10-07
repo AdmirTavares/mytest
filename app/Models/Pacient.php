@@ -16,5 +16,11 @@ class Pacient extends Model
         'zipcode',
         'city'
 ];
+
+
+public function user(){
+    return $this->belongsTo(User::class);
+}
+
     use HasFactory;
 }

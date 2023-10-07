@@ -187,7 +187,7 @@
             <div class="user d-inline-block">
                 <button class="btn btn-empty p-0" type="button" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">
-                    <span class="name">Sarah Kortney</span>
+                    <span class="name">{{auth()->user()->name}}</span>
                     <span>
                         <img alt="Profile Picture" src="img/profiles/l-1.jpg" />
                     </span>
@@ -208,13 +208,13 @@
             <div class="scroll">
                 <ul class="list-unstyled">
                     <li class="active">
-                        <a href="#">
+                        <a href="{{route('home')}}">
                             <i class="iconsminds-shop-4"></i>
                             <span>Quiz</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{route('logout')}}">
                             <i class="iconsminds-digital-drawing"></i> Pages
                         </a>
                     </li>

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('answer');
             $table->string('question');
             $table->integer('number');
+            $table->foreingId('user_id')->constrained();
         });
     }
 
