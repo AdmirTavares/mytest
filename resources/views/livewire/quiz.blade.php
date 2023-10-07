@@ -15,9 +15,10 @@
                     @if ($questionData['Oneselection'])
                     <div class="row">
                         @foreach ($questionData['options'] as $option)
+                        
                         <div class="col-md-6 mb-4">
                             <label class="card">
-                                <input wire:key="{{ $questionData['number'] }}" style="" type="radio"
+                                <input required wire:key="{{ $questionData['number'] }}" style="" type="radio"
                                     id="radio{{ $option }}" name="options{{ $questionData['number'] }}"
                                     value="{{ $option }}"
                                     wire:click="RadioSave('{{ $questionData['number'] }}','{{ $questionData['question'] }}', '{{ $option }}')">
@@ -28,6 +29,7 @@
                                 </div>
                             </label>
                         </div>
+                    
                         @endforeach
                     </div>
                     @elseif($questionData['textfield'])
@@ -36,7 +38,7 @@
 
                         <div class="col-md-6 mb-4">
                             <label class="card">
-                                <input wire:key="{{ $questionData['number'] }}" style="" type="radio"
+                                <input required wire:key="{{ $questionData['number'] }}" type="radio"
                                     name="options{{ $questionData['number'] }}" value="{{ $option }}"
                                     wire:click="RadioSave('{{ $questionData['number'] }}','{{ $questionData['question'] }}', '{{ $option }}')">
                                 <div class="card-body">
@@ -47,31 +49,31 @@
                             </label>
                         </div>
                         @if ($loop->last)
-                        <script>
-                            document.querySelector('input[name="options{{ $questionData['number'] }}"]:last-of-type').addEventListener('click', function() {
-                                var ElementOcult = document.getElementById('ElementOcult');
-                
-                                if (ElementOcult.style.display === 'none') {
-                                   ElementOcult.style.display = 'block';
-                                   } else {
-                                 ElementOcult.style.display = 'none';
-                             }
-                            });
-                        </script>
-                        @endif
-                        @endforeach
-                        <div  class="col-md-6 mb-4">
-                            <div  class="card" style="display:none; "  id="ElementOcult">
+                       
+
+                        <div class="col-md-6 mb-4">
+                            <label class="card">
+                                    <input requ wire:key="{{ $questionData['number'] }}" type="radio"
+                                    name="options{{ $questionData['number'] }}" value="{{ $questionData['answerTextfield'] }}"
+                                    >
                                 <div class="card-body">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">With textarea</span>
+                                    <div class="text-center">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">With textarea</span>
+                                            </div>
+                                            <textarea class="form-control" aria-label="With textarea"></textarea>
                                         </div>
-                                        <textarea class="form-control" aria-label="With textarea"></textarea>
+                                        <p class="list-item-heading mb-1">{{ $questionData['answerTextfield'] }}</p>
                                     </div>
                                 </div>
-                            </div>
+                            </label>
                         </div>
+                        @endif
+                    
+
+                        @endforeach
+                      
                     </div>
                     @elseif($questionData['multiple_choice'])
                     <div class="row">
@@ -95,7 +97,18 @@
                 </div>
                 @endforeach
             </div>
+            <script>
+                function validateRequiredRadios() {
+                    var requiredRadios = document.querySelectorAll('input[type="radio"][required]');
+                    for (var i = 0; i < requiredRadios.length; i++) {
+                        if (requiredRadios[i].checked) {
+                            return true; // Pelo menos um radio marcado
+                        }
+                    }
+                    alert('Por favor, marque pelo menos uma opção obrigatória.');
+                    return false; // Nenhum radio marcado
+                }
+            </script>
         </div>
     </div>
-
 

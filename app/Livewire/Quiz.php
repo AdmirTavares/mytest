@@ -13,6 +13,7 @@ class Quiz extends Component
     public $selectedOptions = [];
     public $selectedCard = [];
     public $TextFildeVisibilite = false;
+    public $smartWizardCheck="smartWizardCheck";
 
     public function RadioSave($number, $question, $option)
     {
@@ -75,6 +76,7 @@ class Quiz extends Component
 
     public function render()
     {
+        $this->smartWizardCheck="smartWizardCheck";
         $questions =  $this->loadQuestionsFromJson();
         return view('livewire.quiz', compact('questions'));
     }
