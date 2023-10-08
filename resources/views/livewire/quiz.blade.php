@@ -3,7 +3,7 @@
     <div id="smartWizardCheck" wire:ignore>
         <ul class="card-header">
             @foreach ($questions as $questionData)
-            <li><a wire:ignore href="#checkStep{{ $questionData['number'] }}">Step {{ $questionData['number']
+            <li><a style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100px;" wire:ignore href="#checkStep{{ $questionData['number'] }}">Step {{ $questionData['number']
                     }}<br /><small>{{
                         $questionData['question'] }}</small></a></li>
             @endforeach
@@ -93,33 +93,11 @@
 
 
                 <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-backdrop="static"
-                data-target="#exampleModalRight">Right Modal</button>
-
-
-
-
-
+                    data-target="#exampleModalRight">Register</button>
 
                 @endif
             </div>
             @endforeach
         </div>
-
-        <script>
-            function validateRequiredRadios() {
-                    var requiredRadios = document.querySelectorAll('input[type="radio"][required]');
-                    for (var i = 0; i < requiredRadios.length; i++) {
-                        if (requiredRadios[i].checked) {
-                            return true; // Pelo menos um radio marcado
-                        }
-                    }
-                    Swal.fire(
-                         'Attention',
-                         'Please select one answer',
-                          'warning'
-                              );
-                    return false; // Nenhum radio marcado
-                }
-        </script>
     </div>
 </div>

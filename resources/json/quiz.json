@@ -12,72 +12,60 @@
         },
         {
             "number": 2,
-            "question": "Qual autoridade de decisão seus representantes de confiança devem ter?",
+            "question": "Welche Entscheidungsbefugnis sollen deine Vertrauenspersonen haben?",
             "multiple_choice": false,
             "Oneselection":true,
              "inserir": false,
              "textfield": false,
             "options": [
-                "Decidir apenas em conjunto.",
-                "Cada um decide separadamente.",
-                "Cada um decide separadamente, mas em caso de desacordo, a pessoa mencionada em primeiro lugar decide."
+                "Nur zusammen entscheiden",
+                "Jeder für sich entscheiden",
+                "Jeder für sich entscheiden, aber bei Meinungsverschiedenheiten entscheidet die zuerst genannte Person"
             ]
         },
         
         {
             "number": 3,
             
-            "question": "Hier die Dat",
+            "question": "getroffenen Entscheidungen Anwendung finden?",
             "Oneselection":false,
-            "multiple_choice": true,
+            "multiple_choice": false,
             "inserir": false,
-            "textfield": false,
+            "textfield": true,
+            "answerTextfield":"Eine von mir beschriebene Situation",
             "options": [
-                "VORNAME NACHNAME",
-                "geboren am GEBURTSDATUM in GEBURTSORT",
-                "wohnhaft in STRASSE + HAUSNUMMER, POSTLEITZAHL, ORT"
+                "Während meines Sterbeprozesses.",
+                "Bei einer unheilbaren Krankheit",
+                "Bei einem fortgeschrittenen Hirnabbauprozess",
+                "Bei einer schweren Hirnschädigung"
             ]
         },
         {
             "number": 4,
-            "question": "Qual autorid",
+            "question": "Lebenserhaltende Maßnahmen Möchtest du in den zuvor gewählten Situationen künstlich am Leben gehalten werden?",
             "Oneselection":true,
             "multiple_choice": false,
             "textfield": false,
              "inserir": false,
             "options": [
-                "Decidir apenas em .",
-                "Cada um decide .",
-                "Cada um decide separadamente, mas em caso de desacordo,."
+                "Alles tun, um mich am Leben zu halten",
+                "Keine lebenserhaltenden Maßnahmen"
             ]  
         },
         {
             "number": 5,
-            "question": "Hier die Dat",
-            "Oneselection":false,
+            "question": ": Möchtest du Wiederbelebungsmaßnahmen in den zuvor gewählten Situationen?",
+            "Oneselection":true,
             "multiple_choice": false,
-            "textfield": true,
+            "textfield": false,
              "inserir": false,
             "options": [
-                "VORNAME ",
-                "geboren ",
-                "wohnha"
+                "Ja",
+                "Nein"
             ],
-            "answerTextfield":"oiiiiiiii"
-        },
-        {
-            "number": 6,
-            "question": "Hier die Dat",
-            "Oneselection":false,
-            "multiple_choice": false,
-            "textfield": true,
-             "inserir": false,
-            "options": [
-                "mofofoakoasoasd ",
-                "lslalls",
-                "wwwlwllwlwlwlwlwl"
-            ],
-            "answerTextfield":"oiiiiiiii"
+            "answerTextfield":""
         }
+        
+       
     ]
 }
