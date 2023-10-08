@@ -212,9 +212,15 @@
                             <span>Quiz</span>
                         </a>
                     </li>
+                    <li >
+                        <a href="{{route('task')}}">
+                            <i class="iconsminds-shop-4"></i>
+                            <span>Task history</span>
+                        </a>
+                    </li>
                     <li>
                         <a href="{{route('logout')}}">
-                            <i class="iconsminds-digital-drawing"></i> Pages
+                            <i class="iconsminds-digital-drawing"></i> Sair
                         </a>
                     </li>
 
