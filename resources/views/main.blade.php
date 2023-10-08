@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Dore jQuery</title>
+    <title>@yield('title','home')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <link rel="stylesheet" href="font/iconsmind-s/css/iconsminds.css" />
@@ -224,7 +224,7 @@
 
     <main>
         <div class="container-fluid">
-            @livewire('quiz')
+            @yield('content')
         </div>
     </main>
 
