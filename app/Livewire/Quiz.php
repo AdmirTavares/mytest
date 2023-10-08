@@ -6,6 +6,7 @@ use Livewire\Attributes\Rule;
 use Livewire\Component;
 use App\Models\Save;
 
+
 class Quiz extends Component
 {
     public $questions = [];
@@ -14,20 +15,23 @@ class Quiz extends Component
     public $TextFildeVisibilite = false;
     public $textfield = '';
 
-    public function create($number){
-    
-    }
+    public function createquiz($number,$question,$option){
+        if (auth()->check()) {
+        Save::create([
+            'number' => $number,
+            'question' => $question,
+            'answer' => $option,
+            'user_id' => auth()->user()->id
+        ]);
+    }}
+
     public function RadioSave($number, $question, $option)
     {
 
         $aux = Save::where('number', $number)->get();
         if ($aux->isEmpty() || $aux == NULL) {
-            Save::create([
-                'number' => $number,
-                'question' => $question,
-                'answer' => $option,
-                'user_id' => auth()->user()->id,
-            ]);
+            $this->createquiz($number,$question,$option);
+
         } else {
             Save::where('number', $number)->update([
                 'answer' => $option,
@@ -52,12 +56,7 @@ class Quiz extends Component
                             'user_id' => auth()->user()->id,
                         ])->first();
                         if (!$registroExistente) {
-                            Save::create([
-                                'number' => $questionNumber,
-                                'question' => $question,
-                                'answer' => $option,
-                                'user_id' => auth()->user()->id,
-                            ]);
+                            $this->createquiz($questionNumber,$question,$option);
                         }
                         $this->reset();
                     } else {

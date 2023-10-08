@@ -8,13 +8,10 @@
 
     <link rel="stylesheet" href="font/iconsmind-s/css/iconsminds.css" />
     <link rel="stylesheet" href="font/simple-line-icons/css/simple-line-icons.css" />
-    <link rel="stylesheet" href="css/vendor/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/vendor/bootstrap.rtl.only.min.css" />
     <link rel="stylesheet" href="css/vendor/fullcalendar.min.css" />
     <link rel="stylesheet" href="css/vendor/dataTables.bootstrap4.min.css" />
     <link rel="stylesheet" href="css/vendor/datatables.responsive.bootstrap4.min.css" />
     <link rel="stylesheet" href="css/vendor/select2.min.css" />
-    <link rel="stylesheet" href="css/vendor/perfect-scrollbar.css" />
     <link rel="stylesheet" href="css/vendor/glide.core.min.css" />
     <link rel="stylesheet" href="css/vendor/bootstrap-stars.css" />
     <link rel="stylesheet" href="css/vendor/nouislider.min.css" />
@@ -27,6 +24,8 @@
     <link rel="stylesheet" href="css/vendor/smart_wizard.min.css" />
     <link rel="stylesheet" href="css/vendor/bootstrap-tagsinput.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.all.min.js"></script>
     
 </head>
 

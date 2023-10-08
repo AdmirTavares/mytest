@@ -2,6 +2,16 @@
     "questions": [
         {
             "number": 1,
+            "question": "Hier die Daten des",
+            "multiple_choice": false,
+            "Oneselection":false,
+             "inserir": true,
+             "textfield": false,
+            "options": [
+            ]
+        },
+        {
+            "number": 2,
             "question": "Qual autoridade de decisão seus representantes de confiança devem ter?",
             "multiple_choice": false,
             "Oneselection":true,
@@ -15,7 +25,7 @@
         },
         
         {
-            "number": 2,
+            "number": 3,
             
             "question": "Hier die Dat",
             "Oneselection":false,
@@ -29,7 +39,7 @@
             ]
         },
         {
-            "number": 3,
+            "number": 4,
             "question": "Qual autorid",
             "Oneselection":true,
             "multiple_choice": false,
@@ -42,7 +52,7 @@
             ]  
         },
         {
-            "number": 4,
+            "number": 5,
             "question": "Hier die Dat",
             "Oneselection":false,
             "multiple_choice": false,
@@ -56,7 +66,7 @@
             "answerTextfield":"oiiiiiiii"
         },
         {
-            "number": 5,
+            "number": 6,
             "question": "Hier die Dat",
             "Oneselection":false,
             "multiple_choice": false,

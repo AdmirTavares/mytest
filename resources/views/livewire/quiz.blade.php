@@ -1,5 +1,5 @@
 <div class="card-body">
-@livewire('modalregister')
+    @livewire('modalregister')
     <div id="smartWizardCheck" wire:ignore>
         <ul class="card-header">
             @foreach ($questions as $questionData)
@@ -89,16 +89,21 @@
                     </div>
                     @endforeach
                 </div>
+                @elseif($questionData['inserir'])
+
+
+                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-backdrop="static"
+                data-target="#exampleModalRight">Right Modal</button>
+
+
+
+
+
+
                 @endif
             </div>
             @endforeach
-            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-backdrop="static"
-                data-target="#exampleModalRight">Right Modal</button>
-
         </div>
-
-
-
 
         <script>
             function validateRequiredRadios() {
@@ -108,7 +113,11 @@
                             return true; // Pelo menos um radio marcado
                         }
                     }
-                    alert('Por favor, marque pelo menos uma opção obrigatória.');
+                    Swal.fire(
+                         'Attention',
+                         'Please select one answer',
+                          'warning'
+                              );
                     return false; // Nenhum radio marcado
                 }
         </script>

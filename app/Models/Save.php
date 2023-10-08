@@ -11,7 +11,8 @@ class Save extends Model
    protected $fillable =[
         'answer',
         'question',
-        'number'
+        'number',
+        'user_id',
 ];
 
 public function user(){

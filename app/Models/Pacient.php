@@ -14,7 +14,9 @@ class Pacient extends Model
         'placebirth',
         'address',
         'zipcode',
-        'city'
+        'city',
+        'user_id'
+        
 ];
 
 
