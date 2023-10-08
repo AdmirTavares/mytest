@@ -3,7 +3,8 @@
     <div id="smartWizardCheck" wire:ignore>
         <ul class="card-header">
             @foreach ($questions as $questionData)
-            <li><a style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100px;" wire:ignore href="#checkStep{{ $questionData['number'] }}">Step {{ $questionData['number']
+            <li><a style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100px;" wire:ignore
+                    href="#checkStep{{ $questionData['number'] }}">Step {{ $questionData['number']
                     }}<br /><small>{{
                         $questionData['question'] }}</small></a></li>
             @endforeach
@@ -100,4 +101,9 @@
             @endforeach
         </div>
     </div>
+    <div wire:poll>
+        @livewire('cardpacient')
+
+    </div>
+
 </div>

@@ -29,9 +29,9 @@
             
             "question": "getroffenen Entscheidungen Anwendung finden?",
             "Oneselection":false,
-            "multiple_choice": false,
+            "multiple_choice": true,
             "inserir": false,
-            "textfield": true,
+            "textfield": false,
             "answerTextfield":"Eine von mir beschriebene Situation",
             "options": [
                 "Während meines Sterbeprozesses.",
