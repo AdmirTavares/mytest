@@ -66,21 +66,19 @@ class Quiz extends Component
                 }
             }
         }
-        dd($this->selectedOptions);
+       
     }
 
 
 
     public function validateSelection($questionNumber, $option)
     {
-        // Verifique se a opção foi selecionada e, se sim, adicione-a ao array de seleções.
         if (isset($this->selectedOptions[$questionNumber][$option])) {
             $this->selectedOptions[$questionNumber]['selected'] = true;
         } else {
             $this->selectedOptions[$questionNumber]['selected'] = false;
         }
 
-        // Verifique se pelo menos uma opção foi selecionada em todas as perguntas.
         foreach ($this->questionData as $question) {
             if (!isset($this->selectedOptions[$question['number']]['selected']) || !$this->selectedOptions[$question['number']]['selected']) {
                 $this->addError('selectedOptions', 'Selecione pelo menos uma opção em cada pergunta.');

@@ -28,3 +28,6 @@ route::get('/logout', function(){
     Auth::logout();
     return redirect('/');
     })->name('logout');
+    route::get('/task', function(){
+       return view('task');
+        })->name('task');
